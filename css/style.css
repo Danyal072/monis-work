@@ -1,4 +1,4 @@
-/* CSS Variables - Updated to New Color Scheme */
+        /* CSS Variables - Updated to New Color Scheme */
         :root {
             --bg-light: #f2eff2;
             --primary-accent: #098bcb;
@@ -65,10 +65,32 @@
             font-weight: 900;
             letter-spacing: -1.5px;
             text-transform: uppercase;
+            z-index: 1001;
         }
 
         .logo span {
             color: var(--primary-accent);
+        }
+
+        /* Responsive Menu Toggle */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 5px 0;
+            transition: var(--transition-fast);
         }
 
         nav ul {
@@ -122,7 +144,7 @@
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 0 10%;
+            padding: 0 5%;
             position: relative;
             overflow: hidden;
         }
@@ -136,7 +158,7 @@
         }
 
         #home h1 {
-            font-size: clamp(3.5rem, 10vw, 6rem);
+            font-size: clamp(2.5rem, 10vw, 6rem);
             line-height: 0.9;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
@@ -146,17 +168,17 @@
         }
 
         #home p {
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
             color: var(--primary-accent);
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: clamp(2px, 1vw, 6px);
             font-weight: 800;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out forwards;
         }
 
         .hero-btn {
-            padding: 18px 50px;
+            padding: clamp(12px, 2vw, 18px) clamp(30px, 4vw, 50px);
             background: var(--primary-accent);
             color: var(--white);
             text-decoration: none;
@@ -167,6 +189,7 @@
             transition: var(--transition-fast);
             animation: fadeInUp 1.2s ease-out forwards;
             box-shadow: 0 10px 0 #076ea3;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
         }
 
         .hero-btn:hover {
@@ -182,18 +205,18 @@
 
         /* --- SECTION GENERIC STYLES --- */
         section {
-            padding: 140px 12%;
+            padding: clamp(80px, 15vw, 140px) 8%;
             scroll-margin-top: 60px;
         }
 
         .section-title {
-            margin-bottom: 5rem;
-            font-size: 3.5rem;
+            margin-bottom: clamp(3rem, 10vw, 5rem);
+            font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -2px;
             line-height: 1;
-            border-left: 10px solid var(--primary-accent);
+            border-left: 8px solid var(--primary-accent);
             padding-left: 20px;
         }
 
@@ -208,11 +231,13 @@
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             align-items: center;
-            gap: 5rem;
+            gap: clamp(2rem, 5vw, 5rem);
         }
 
         .about-image {
             position: relative;
+            max-width: 500px;
+            justify-self: center;
         }
 
         .about-image img {
@@ -220,6 +245,7 @@
             filter: grayscale(100%);
             transition: var(--transition-slow);
             border: 1px solid #ddd;
+            display: block;
         }
 
         .about-image:hover img {
@@ -230,11 +256,11 @@
         .about-image::after {
             content: '';
             position: absolute;
-            bottom: -20px;
-            right: -20px;
+            bottom: -15px;
+            right: -15px;
             width: 100%;
             height: 100%;
-            border: 10px solid var(--primary-accent);
+            border: clamp(5px, 1vw, 10px) solid var(--primary-accent);
             z-index: -1;
             transition: var(--transition-slow);
         }
@@ -244,14 +270,14 @@
         }
 
         .about-content h3 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 1.5rem;
             line-height: 1.2;
             color: var(--deep-navy);
         }
 
         .education {
-            margin-top: 3rem;
+            margin-top: 2rem;
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
@@ -259,16 +285,16 @@
 
         .edu-box {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.5rem;
             border-top: 5px solid var(--primary-accent);
             flex: 1;
-            min-width: 200px;
+            min-width: 250px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .edu-box strong {
             color: var(--white);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             display: block;
             margin-bottom: 10px;
@@ -285,25 +311,25 @@
 
         #skills .section-title {
             color: var(--white);
-            border-left-color: var(--primary-accent);
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2px;
             background: rgba(255,255,255,0.05);
         }
 
         .skill-card {
             background: var(--deep-navy);
-            padding: 4rem 2rem;
+            padding: clamp(2rem, 8vw, 4rem) 1.5rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-align: center;
             transition: var(--transition-fast);
             cursor: pointer;
+            font-size: clamp(0.8rem, 2vw, 1rem);
         }
 
         .skill-card:hover {
@@ -314,13 +340,13 @@
         /* --- PROJECTS SECTION --- */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 100%, 400px), 1fr));
             gap: 30px;
         }
 
         .project-card {
             background: var(--white);
-            padding: 4rem;
+            padding: clamp(1.5rem, 5vw, 4rem);
             border: 1px solid #e0e0e0;
             transition: var(--transition-slow);
             display: flex;
@@ -336,7 +362,7 @@
         }
 
         .project-card h3 {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             margin-bottom: 1.5rem;
             transition: var(--transition-fast);
             color: var(--deep-navy);
@@ -344,11 +370,6 @@
 
         .project-card:hover h3 {
             color: var(--primary-accent);
-        }
-
-        .project-card p {
-            font-size: 1.1rem;
-            opacity: 0.8;
         }
 
         /* --- CONTACT SECTION --- */
@@ -361,18 +382,18 @@
 
         .contact-info {
             background: var(--primary-accent);
-            padding: 5rem;
+            padding: clamp(2rem, 8vw, 5rem);
             color: var(--white);
         }
 
         .contact-info h3 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 3rem);
             margin-bottom: 2rem;
             text-transform: uppercase;
         }
 
         .info-item {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .info-item label {
@@ -385,18 +406,18 @@
         }
 
         .info-item p {
-            font-size: 1.5rem;
-            font-weight: 400;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            word-wrap: break-word;
         }
 
         .contact-form {
             background: var(--deep-navy);
-            padding: 5rem;
+            padding: clamp(2rem, 8vw, 5rem);
         }
 
         form input, form textarea {
             width: 100%;
-            padding: 20px;
+            padding: clamp(12px, 2vw, 20px);
             margin-bottom: 20px;
             border: none;
             background: rgba(255,255,255,0.05);
@@ -407,19 +428,9 @@
             transition: var(--transition-fast);
         }
 
-        form input::placeholder, form textarea::placeholder {
-            color: rgba(255,255,255,0.4);
-        }
-
-        form input:focus, form textarea:focus {
-            outline: none;
-            border-bottom-color: var(--primary-accent);
-            background: rgba(255,255,255,0.1);
-        }
-
         form button {
             width: 100%;
-            padding: 20px;
+            padding: 18px;
             background: var(--primary-accent);
             color: var(--white);
             border: none;
@@ -430,39 +441,77 @@
             box-shadow: 0 5px 0 #076ea3;
         }
 
-        form button:hover {
-            filter: brightness(1.1);
-            transform: scale(1.02);
-        }
-
         /* --- FOOTER --- */
         footer {
             background-color: var(--dark-shade);
             color: var(--white);
             text-align: center;
-            padding: 6rem 0;
+            padding: clamp(3rem, 10vw, 6rem) 5%;
         }
 
-        footer p {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.6;
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 1024px) {
+            section { padding-left: 5%; padding-right: 5%; }
         }
 
-        footer p span {
-            color: var(--primary-accent);
-            opacity: 1;
-            font-weight: 800;
-        }
+        @media (max-width: 900px) {
+            .menu-icon {
+                display: block;
+            }
 
-        /* --- MOBILE --- */
-        @media (max-width: 992px) {
-            .about-container, .contact-container, .projects-grid {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--dark-shade);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition-slow);
+            }
+
+            nav ul li {
+                margin: 20px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.5rem;
+            }
+
+            #menu-toggle:checked ~ nav ul {
+                right: 0;
+            }
+
+            #menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+            #menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+                opacity: 0;
+            }
+            #menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -7px);
+            }
+
+            .about-container, .contact-container {
                 grid-template-columns: 1fr;
             }
-            .section-title {
-                font-size: 2.5rem;
+
+            .contact-form {
+                order: 2;
+            }
+            .contact-info {
+                order: 1;
             }
         }
-    
+
+        @media (max-width: 600px) {
+            .section-title {
+                border-left-width: 6px;
+                padding-left: 15px;
+            }
+            .about-image::after {
+                display: none; /* Simplify on very small screens */
+            }
+        }
